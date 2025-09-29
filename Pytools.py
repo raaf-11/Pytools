@@ -128,6 +128,32 @@ def pc_status():
     print(f"Threads: {psutil.cpu_count(logical=True)}")
     print(f"Usage: {psutil.cpu_percent(interval=1)}%")
 
+#b7e0cafa5b7d3d0ad71821f0d19d5d3f
+#Currency converter
+import requests
+
+def currency_converter():
+    amount = float(input("Enter amount: "))
+    from_curr = input("From currency (e.g., USD, INR, EUR): ").upper()
+    to_curr = input("To currency (e.g., USD, INR, EUR): ").upper()
+    access_key = "b7e0cafa5b7d3d0ad71821f0d19d5d3f"
+    url = f"http://api.exchangeratesapi.io/v1/convert?access_key={access_key}&from={from_curr}&to={to_curr}&amount={amount}"
+    #url = f"https://api.exchangerate.host/convert?from={from_curr}&to={to_curr}&amount={amount}"
+    try:
+        response = requests.get(url)
+        if response.status_code == 200:
+            data = response.json()
+            print("DEBUG JSON:", data)
+            result = data.get("result")
+            if result:
+                print(f"\n{amount} {from_curr} = {result:.2f} {to_curr}\n")
+            else:
+                print("Conversion error.")
+        else:
+            print("API error.")
+    except Exception as e:
+        print(f"Error: {e}")
+
 
 # ---------------------------
 # Main Menu
@@ -139,9 +165,10 @@ def main():
         print("2. ASCII Art Generator")
         print("3. QR Code Generator")
         print("4. System Info")
-        print("5.Exit")
+        print("5.Currency converter")
+        print("6.Exit")
 
-        choice = input("Choose an option (1-5): ").strip()
+        choice = input("Choose an option (1-6): ").strip()
 
         if choice == "1":
             file_organizer()
@@ -152,6 +179,8 @@ def main():
         elif choice == "4":
             pc_status()
         elif choice == "5":
+            currency_converter()
+        elif choice == "6":
             print("Exiting PyTools. Goodbye!")
             break
         else:
