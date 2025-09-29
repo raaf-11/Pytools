@@ -1,4 +1,4 @@
-\# PyTools
+PyTools
 
 
 
@@ -10,29 +10,29 @@ PyTools is a Python-based command-line utility that bundles several handy tools 
 
 
 
-\## Features
+ Features
 
 
 
-1\. \*\*File Organizer\*\*  
+1.File Organizer
 
 &nbsp;  Organizes files in a folder into categories like Images, Documents, Code, Audio, Video, Archives, and Executables.
 
 
 
-2\. \*\*ASCII Art Generator\*\*  
+2.ASCII Art Generator
 
 &nbsp;  Converts user-provided text into stylish ASCII art using `pyfiglet`.
 
 
 
-3\. \*\*QR Code Generator\*\*  
+3.QR Code Generator
 
 &nbsp;  Generates QR codes from text or URLs and saves them as an image file (`my\_qr.png`) using `qrcode`.
 
 
 
-4\. \*\*System Information\*\*  
+4.System Information
 
 &nbsp;  Displays detailed system information including:
 
@@ -50,7 +50,7 @@ PyTools is a Python-based command-line utility that bundles several handy tools 
 
 
 
-5\. \*\*Currency Converter\*\*  
+5.Currency Converter
 
 &nbsp;  Converts between different currencies using the Exchange Rates API (`requests`).
 
@@ -60,11 +60,11 @@ PyTools is a Python-based command-line utility that bundles several handy tools 
 
 
 
-\## Installation
+Installation
 
 
 
-1\. Clone the repository:
+1. Clone the repository:
 
 
 
